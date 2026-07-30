@@ -4,6 +4,10 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./book_api.db:/app/book_api.db
+      - book-api-data:/data
     environment:
       - NODE_ENV=production
+      - DATABASE_PATH=/data/book_api.db
+
+volumes:
+  book-api-data:

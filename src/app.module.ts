@@ -5,11 +5,15 @@ import { BookModule } from './book/book.module';
 import { Author } from './author/author.entity';
 import { Book } from './book/book.entity';
 
+const databasePath =
+  (globalThis as { process?: { env?: Record<string, string | undefined> } }).process?.env
+    ?.DATABASE_PATH ?? 'book_api.db';
+
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'better-sqlite3',
-      database: 'book_api.db',
+      database: databasePath,
       entities: [Author, Book],
       synchronize: true,
     }),
