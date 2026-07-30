@@ -115,33 +115,6 @@ By default, Live Share only shares your code. Terminals are kept private for sec
 
 ---
 
-## Getting Started
-
-### Local Development
-
-**Prerequisites:** Node.js ≥ 18, pnpm ≥ 9
-
-```bash
-# Install dependencies
-pnpm install
-
-# Start the API in development mode
-pnpm start:dev
-
-# The API will be available at http://localhost:3000
-```
-
-### Docker
-
-```bash
-# Build and start the container
-docker-compose up --build
-
-# The API will be available at http://localhost:3000
-```
-
----
-
 ## Interview Guide
 
 This repository contains **15 unit tests**:
