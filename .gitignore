@@ -22,3 +22,14 @@ lerna-debug.log*
 # temp directory
 .temp
 .tmp
+
+# SQLite database files
+*.db
+*.db-shm
+*.db-wal
+
+# TypeScript incremental build info
+*.tsbuildinfo
+
+# Coverage reports
+coverage/
