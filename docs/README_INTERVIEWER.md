@@ -13,6 +13,8 @@ It is deliberately incomplete in two areas so that a candidate can demonstrate t
 
 ### GitHub Codespaces
 
+![GitHub Codespaces](./images/codespaces.png)
+
 1. Click the green **Code** button on the repository page.
 2. Select the **Codespaces** tab.
 3. Click **Create Codespace** on the current branch (main).
@@ -20,7 +22,7 @@ It is deliberately incomplete in two areas so that a candidate can demonstrate t
 
 ### Install the Live Share Extension (Host & Guest)
 
-- Open the Extensions view by clicking the Extensions icon in the Activity Bar on the left (the icon looks like four blocks) or by pressing ⇧ ⌘ X (Mac) / Ctrl+Shift+X (Windows).
+- Open the Extensions view by clicking the Extensions icon in the Activity Bar on the left (the icon looks like four blocks).
 - Search for Live Share (published by Microsoft).
 - Click Install.
 
@@ -33,7 +35,8 @@ It is deliberately incomplete in two areas so that a candidate can demonstrate t
 
 ### Grant Terminal Access (Host)
 
-- By default, Live Share only shares your code. Terminals are kept private for security reasons. To give the other person terminal access:
+By default, Live Share only shares your code. Terminals are kept private for security reasons. To give the other person terminal access:
+
 - Open the Live Share view from the Activity Bar on the left.
 - Scroll down to the Shared Terminals section.
 - Click the Share terminal icon (it looks like a plus sign or a terminal icon).
