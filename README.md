@@ -6,19 +6,7 @@ This project uses Node.js, TypeScript, NestJS, SQLite (via TypeORM), and Vitest.
 
 ---
 
-## Getting Started
-
-### GitHub Codespaces
-
-1. Click the green **Code** button on the repository page.
-2. Select the **Codespaces** tab.
-3. If you're the interviewer, click **Create Codespace** on the current branch (main).
-4. If you're the candidate, click the already created codespace.
-5. Wait for the environment to initialize.
-
----
-
-## Further Instructions
+## Interview Instructions
 
 - [Candidate Readme](./docs/README_CANDIDATE.md)
 - [Interviewer Readme](./docs/README_INTERVIEWER.md)

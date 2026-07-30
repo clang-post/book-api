@@ -173,7 +173,7 @@ describe('BookService', () => {
       expect(first.id).not.toEqual(second.id);
     });
 
-    it('a record with the same book title should return the same id', async () => {
+    it('should return the same id when a record with the same book title is submitted again', async () => {
       const dto = { title: 'The Great Gatsby', authorId: 1, isbn: '978-0-7432-7356-5' };
       const author = {
         id: 1,
