@@ -1,0 +1,9 @@
+services:
+  book-api:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./book_api.db:/app/book_api.db
+    environment:
+      - NODE_ENV=production
