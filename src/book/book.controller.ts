@@ -4,6 +4,7 @@ import {
   Post,
   Body,
   Param,
+  ParseArrayPipe,
   ParseIntPipe,
 } from '@nestjs/common';
 import { BookService } from './book.service';
@@ -27,5 +28,12 @@ export class BookController {
   @Post()
   create(@Body() dto: CreateBookDto): Promise<Book> {
     return this.bookService.create(dto);
+  }
+
+  @Post('multiple')
+  createMultiple(
+    @Body(new ParseArrayPipe({ items: CreateBookDto })) dtos: CreateBookDto[],
+  ): Promise<Book[]> {
+    return this.bookService.createMultiple(dtos);
   }
 }

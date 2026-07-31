@@ -50,4 +50,15 @@ export class BookService {
     const book = this.bookRepository.create(bookData);
     return this.bookRepository.save(book);
   }
+
+  async createMultiple(dtos: CreateBookDto[]): Promise<Book[]> {
+    const createdBooks: Book[] = [];
+
+    for (const dto of dtos) {
+      const createdBook = await this.create(dto);
+      createdBooks.push(createdBook);
+    }
+
+    return createdBooks;
+  }
 }

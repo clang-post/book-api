@@ -196,4 +196,77 @@ describe('BookService', () => {
       expect(first.id).toEqual(second.id);
     });
   });
+
+  describe('createMultiple', () => {
+    it('should create multiple books and return them in order', async () => {
+      const firstDto = {
+        title: 'Pride and Prejudice',
+        authorId: 1,
+        isbn: '978-0-14-143951-8',
+      };
+      const secondDto = {
+        title: 'Sense and Sensibility',
+        authorId: 1,
+        isbn: '978-0-14-143966-2',
+      };
+      const author = {
+        id: 1,
+        firstName: 'Jane',
+        lastName: 'Austen',
+        country: 'England',
+        fullName: 'Jane Austen',
+      };
+      const firstCreatedBook = { title: firstDto.title, author, isbn: firstDto.isbn };
+      const secondCreatedBook = { title: secondDto.title, author, isbn: secondDto.isbn };
+      const firstSavedBook = { id: 1, ...firstCreatedBook, authorId: 1 };
+      const secondSavedBook = { id: 2, ...secondCreatedBook, authorId: 1 };
+
+      mockAuthorRepository.findOne.mockResolvedValue(author);
+      mockBookRepository.create
+        .mockReturnValueOnce(firstCreatedBook)
+        .mockReturnValueOnce(secondCreatedBook);
+      mockBookRepository.save
+        .mockResolvedValueOnce(firstSavedBook)
+        .mockResolvedValueOnce(secondSavedBook);
+
+      const result = await service.createMultiple([firstDto, secondDto]);
+
+      expect(result).toEqual([firstSavedBook, secondSavedBook]);
+      expect(mockAuthorRepository.findOne).toHaveBeenCalledTimes(2);
+      expect(mockBookRepository.save).toHaveBeenCalledTimes(2);
+    });
+
+    it('should throw when one of the books references an unknown author', async () => {
+      const firstDto = {
+        title: 'Pride and Prejudice',
+        authorId: 1,
+        isbn: '978-0-14-143951-8',
+      };
+      const secondDto = {
+        title: 'Unknown Author Book',
+        authorId: 999,
+        isbn: '978-0-00-000000-0',
+      };
+      const author = {
+        id: 1,
+        firstName: 'Jane',
+        lastName: 'Austen',
+        country: 'England',
+        fullName: 'Jane Austen',
+      };
+      const firstCreatedBook = { title: firstDto.title, author, isbn: firstDto.isbn };
+      const firstSavedBook = { id: 1, ...firstCreatedBook, authorId: 1 };
+
+      mockAuthorRepository.findOne
+        .mockResolvedValueOnce(author)
+        .mockResolvedValueOnce(null);
+      mockBookRepository.create.mockReturnValue(firstCreatedBook);
+      mockBookRepository.save.mockResolvedValueOnce(firstSavedBook);
+
+      await expect(service.createMultiple([firstDto, secondDto])).rejects.toThrow(
+        new NotFoundException('Author with id 999 not found'),
+      );
+      expect(mockBookRepository.save).toHaveBeenCalledTimes(1);
+    });
+  });
 });
