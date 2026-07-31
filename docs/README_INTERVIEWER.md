@@ -98,11 +98,12 @@ By default, Live Share only shares your code. Terminals are kept private for sec
 
 ### Books
 
-| Method | Endpoint     | Description       |
-|--------|--------------|-------------------|
-| GET    | `/books`     | Get all books      |
-| GET    | `/books/:id` | Get book by ID     |
-| POST   | `/books`     | Create a new book  |
+| Method | Endpoint          | Description           |
+|--------|-------------------|-----------------------|
+| GET    | `/books`          | Get all books         |
+| GET    | `/books/:id`      | Get book by ID        |
+| POST   | `/books`          | Create a new book     |
+| POST   | `/books/multiple` | Create multiple books |
 
 **POST `/books` body:**
 ```json

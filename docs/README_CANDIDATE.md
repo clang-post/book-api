@@ -25,11 +25,12 @@ Welcome! This project is a NestJS REST API for creating and fetching Authors and
 
 ### Books
 
-| Method | Endpoint     | Description       |
-|--------|--------------|-------------------|
-| GET    | `/books`     | Get all books      |
-| GET    | `/books/:id` | Get book by ID     |
-| POST   | `/books`     | Create a new book  |
+| Method | Endpoint          | Description           |
+|--------|-------------------|-----------------------|
+| GET    | `/books`          | Get all books         |
+| GET    | `/books/:id`      | Get book by ID        |
+| POST   | `/books`          | Create a new book     |
+| POST   | `/books/multiple` | Create multiple books |
 
 **POST `/books` body:**
 ```json
