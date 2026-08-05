@@ -156,7 +156,7 @@ If the candidate is struggling:
 
 - Why does the API create a duplicate book instead of returning an existing one?
 - Why can't a book have more than one author right now?
-- What is idempotency and how does it apply to the POST endpoint?
+- When would you use a POST, PUT, or PATCH endpoint?
 - How would you handle validation and error handling in this API?
 - Right now anyone can hit these endpoints, what is a way to secure them?
 - How comfortable do you feel about Vitest, TypeScript, Nest.js, React, and Node in general?
