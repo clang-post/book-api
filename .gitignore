@@ -43,5 +43,9 @@ coverage/
 
 # IDE files
 .idea/
-.vscode/
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/extensions.json
 *.iml
