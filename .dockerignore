@@ -1,6 +1,12 @@
 node_modules
+**/node_modules
 dist
+**/dist
 .git
 .gitignore
-book_api.db
 *.tsbuildinfo
+**/*.tsbuildinfo
+.turbo
+**/.turbo
+frontend
+book_api.db

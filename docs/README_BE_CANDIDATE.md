@@ -59,4 +59,4 @@ Welcome! This project is a NestJS REST API for creating and fetching Authors and
 **Notes:**
 
 - Writing code is optional, but comments and pseudocode are encouraged to explain your solution.
-- For the beginning of this assessment, do not use AI. After the interviewer asks you to, you may use AI to assist.
+- For this assessment, we encourage you to not use AI. However, we would love to hear how you develop with it.

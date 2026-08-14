@@ -8,32 +8,44 @@ This project uses Node.js, TypeScript, NestJS, SQLite (via TypeORM), and Vitest.
 
 ## Interview Instructions
 
-- [Candidate Readme](./docs/README_CANDIDATE.md)
-- [Interviewer Readme](./docs/README_INTERVIEWER.md)
+- [Candidate Backend Readme](docs/README_BE_CANDIDATE.md)
+- [Candidate Frontend Readme](docs/README_FE_CANDIDATE.md)
+- [Interviewer Backend Readme](docs/README_BE_INTERVIEWER.md)
+- [Interviewer Frontend Readme](docs/README_FE_INTERVIEWER.md)
 
 ---
+
+## Monorepo Structure
+
+This repository is a [Turborepo](https://turborepo.com) monorepo managed with pnpm workspaces:
+
+```
+book-api/
+├── backend/   # NestJS + TypeORM API (port 3000)
+├── frontend/  # React + Vite app     (port 5173)
+├── turbo.json
+└── pnpm-workspace.yaml
+```
 
 ## Local Development
 
-**Prerequisites:** Node.js ≥ 18, pnpm ≥ 9
+**Prerequisites:** Node.js ≥ 20, pnpm ≥ 10
 
 ```bash
-# Install dependencies
+# Install dependencies for both workspaces
 pnpm install
 
-# Start the API in development mode
-pnpm start:dev
+# Start backend and frontend together
+pnpm dev
 
-# The API will be available at http://localhost:3000
+# Backend: http://localhost:3000
+# Frontend: http://localhost:5173 (proxies /api/* to the backend)
 ```
 
-### Docker
+Other root scripts (all fan out via Turborepo):
 
 ```bash
-# Build and start the container
-docker-compose up --build
-
-# The API will be available at http://localhost:3000
+pnpm build   # build both packages
+pnpm start   # run production builds
+pnpm test    # run all tests
 ```
-
----

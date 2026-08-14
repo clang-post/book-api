@@ -3,7 +3,7 @@ import {
   PrimaryGeneratedColumn,
   Column,
   JoinColumn,
-  OneToOne,
+  ManyToOne,
 } from 'typeorm';
 import { Author } from '../author/author.entity';
 
@@ -15,7 +15,7 @@ export class Book {
   @Column()
   title: string;
 
-  @OneToOne(() => Author, (author) => author.book, { nullable: true })
+  @ManyToOne(() => Author, (author) => author.books, { nullable: true })
   @JoinColumn({ name: 'authorId' })
   author?: Author;
 
