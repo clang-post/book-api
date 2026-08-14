@@ -1,8 +1,8 @@
 # book-api
 
-A NestJS CRUD Book API designed for **technical interviews**.
+A React, NestJS create & read book SPA designed for **technical interviews**.
 
-This project uses Node.js, TypeScript, NestJS, SQLite (via TypeORM), and Vitest. It is pre-configured for GitHub Codespaces so that a candidate can start immediately in a browser session.
+This project uses React, Node.js, TypeScript, NestJS, SQLite (via TypeORM), and Vitest. It is pre-configured for GitHub Codespaces so that a candidate can start immediately in a browser session.
 
 ---
 
