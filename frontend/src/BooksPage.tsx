@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useShowError } from './ErrorContext';
 
 export function BooksPage() {
+  const showError = useShowError();
   const [books, setBooks] = useState<any[]>([]);
   const [title, setTitle] = useState('');
   const [authorId, setAuthorId] = useState('');
@@ -14,7 +16,7 @@ export function BooksPage() {
         setBooks(res.data);
       })
       .catch((err) => {
-        alert('Failed to load books: ' + (err.response?.status ?? err.message));
+        showError('Failed to load books: ' + (err.response?.status ?? err.message));
       });
   }, []);
 
@@ -29,7 +31,7 @@ export function BooksPage() {
       const res = await axios.get('/api/books');
       setBooks(res.data);
     } catch (err: any) {
-      alert('Failed to create book: ' + (err.response?.status ?? err.message));
+      showError('Failed to create book: ' + (err.response?.status ?? err.message));
     }
   };
 

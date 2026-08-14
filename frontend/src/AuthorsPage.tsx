@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useShowError } from './ErrorContext';
 
 export function AuthorsPage() {
+  const showError = useShowError();
   const [authors, setAuthors] = useState<any[]>([]);
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -14,7 +16,7 @@ export function AuthorsPage() {
         setAuthors(res.data);
       })
       .catch((err) => {
-        alert('Failed to load authors: ' + (err.response?.status ?? err.message));
+        showError('Failed to load authors: ' + (err.response?.status ?? err.message));
       });
   }, []);
 
@@ -29,7 +31,7 @@ export function AuthorsPage() {
       const res = await axios.get('/api/authors');
       setAuthors(res.data);
     } catch (err: any) {
-      alert('Failed to create author: ' + (err.response?.status ?? err.message));
+      showError('Failed to create author: ' + (err.response?.status ?? err.message));
     }
   };
 
