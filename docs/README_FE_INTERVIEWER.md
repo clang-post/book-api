@@ -48,8 +48,6 @@ By default, Live Share only shares your code. Terminals are kept private for sec
 
 ## Interview Guide
 
-### TODO: Add a guide of what we are looking for
-
 ### Tips
 
 If the candidate is struggling:
