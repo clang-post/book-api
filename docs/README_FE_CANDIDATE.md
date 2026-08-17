@@ -45,14 +45,18 @@ Welcome! This project is a React SPA for creating and fetching Authors and Books
 
 **Your task:**
 
-1. Install dependencies and run the tests:
+1. Install dependencies, run the web server, and visit http://localhost:5173/:
 
    ```bash
    pnpm install
    pnpm dev
    ```
    
-### TODO: Create a task list similar to BE readme
+2. Go to the author page and create an author
+3. Go to the book page and create a book
+4. Based on what you have seen so far, what could be improved or added?
+5. Now go into the codebase, and take a moment to look at it. Where would you implement the improvements you mentioned before and how?
+6. The frontend code is full of "bad" code and practices, identify as many problems as you can see. How would you fix them?
 
 **Notes:**
 

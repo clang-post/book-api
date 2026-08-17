@@ -48,8 +48,6 @@ By default, Live Share only shares your code. Terminals are kept private for sec
 
 ## Interview Guide
 
-### TODO: Add a guide of what we are looking for
-
 ### Tips
 
 If the candidate is struggling:
@@ -58,10 +56,6 @@ If the candidate is struggling:
 - Ask how they would use AI to troubleshoot and debug.
 - After the first half of the interview, encourage them to use AI and search engines to decipher syntax, understand error messages, and find solutions.
 
-### TODO: Add more FE specific tips
-
 ### Talking points
 
-- How comfortable do you feel about Vitest, TypeScript, Nest.js, React, and Node in general?
-- How would you implement an `UPDATE` endpoint for books and authors? What are some considerations for updating a book's authors or an author's details?
-- TODO: Add more FE specific talking points
+Moved to separate doc: [README_FE_INTERVIEWER_TALKING_POINTS.md](README_FE_INTERVIEWER_TALKING_POINTS.md)
